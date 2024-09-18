@@ -1,6 +1,6 @@
-.nx
 .idea
 .angular
+dist
 .gitignore
 .prettierignore
 package-lock.json

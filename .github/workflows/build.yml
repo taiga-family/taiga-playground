@@ -13,6 +13,7 @@ jobs:
       - uses: taiga-family/ci/actions/setup/checkout@v1.76.0
       - uses: taiga-family/ci/actions/setup/variables@v1.76.0
       - uses: taiga-family/ci/actions/setup/node@v1.76.0
+      - run: npx ng build
       - run: |
           if [[ "${{ env.SUPPORT_AUTO_PUSH }}" == "true" ]]; then
               npx stylelint '**/*.{less,css}' --fix

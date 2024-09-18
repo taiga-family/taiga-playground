@@ -36,7 +36,7 @@
                         "polyfills": ["zone.js"],
                         "scripts": [],
                         "styles": ["src/styles.less"],
-                        "tsConfig": "tsconfig.app.json",
+                        "tsConfig": "tsconfig.json",
                         "server": "src/main.server.ts",
                         "prerender": true,
                         "ssr": {
