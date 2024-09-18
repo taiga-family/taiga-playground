@@ -1,13 +1,23 @@
 import {ChangeDetectionStrategy, Component, computed, inject} from '@angular/core';
 import {TUI_DOC_ICONS} from '@taiga-ui/addon-doc';
-import {TUI_DARK_MODE, TuiButton, TuiRoot} from '@taiga-ui/core';
+import {TUI_DARK_MODE, TuiButton, TuiIcon, TuiLink, TuiRoot} from '@taiga-ui/core';
+import {TuiAvatar, TuiBadge, TuiBadgedContentComponent} from '@taiga-ui/kit';
 
 import {AppComponent} from './app/app.component';
 
 @Component({
     standalone: true,
     selector: 'root',
-    imports: [AppComponent, TuiButton, TuiRoot],
+    imports: [
+        AppComponent,
+        TuiAvatar,
+        TuiBadge,
+        TuiBadgedContentComponent,
+        TuiButton,
+        TuiIcon,
+        TuiLink,
+        TuiRoot,
+    ],
     template: `
         <tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null">
             <header class="header">
@@ -20,25 +30,38 @@ import {AppComponent} from './app/app.component';
                     Taiga UI
                 </h1>
 
-                <button
-                    appearance="secondary"
-                    size="s"
-                    tuiIconButton
-                    type="button"
-                    class="mode"
-                    [iconStart]="icon()"
-                    [style.border-radius.%]="100"
-                    (click)="darkMode.set(!darkMode())"
-                ></button>
+                <div class="buttons">
+                    <button
+                        appearance="secondary"
+                        size="s"
+                        tuiIconButton
+                        type="button"
+                        [iconStart]="icon()"
+                        [style.border-radius.%]="100"
+                        (click)="darkMode.set(!darkMode())"
+                    ></button>
 
-                <iframe
-                    frameborder="0"
-                    height="30"
-                    scrolling="0"
-                    src="https://ghbtns.com/github-btn.html?user=Taiga-family&repo=taiga-ui&type=star&count=true&size=large"
-                    title="GitHub"
-                    width="170"
-                ></iframe>
+                    <a
+                        href="https://github.com/taiga-family/taiga-ui"
+                        target="_blank"
+                    >
+                        <tui-badged-content [style.--tui-radius.%]="50">
+                            <tui-icon
+                                appearance="flat"
+                                icon="@tui.star"
+                                size="s"
+                                style="color: orange"
+                                tuiBadge
+                                tuiSlot="bottom"
+                            />
+
+                            <tui-avatar
+                                size="s"
+                                src="@tui.github"
+                            />
+                        </tui-badged-content>
+                    </a>
+                </div>
             </header>
 
             <app />
