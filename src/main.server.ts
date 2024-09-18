@@ -1,7 +1,9 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app.component';
-import { config } from './app/app.config.server';
+import type {ApplicationRef} from '@angular/core';
+import {bootstrapApplication} from '@angular/platform-browser';
 
-const bootstrap = () => bootstrapApplication(AppComponent, config);
+import {config} from './app/app.config.server';
+import {Root} from './root';
+
+const bootstrap = async (): Promise<ApplicationRef> => bootstrapApplication(Root, config);
 
 export default bootstrap;

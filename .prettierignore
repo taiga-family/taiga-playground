@@ -1,0 +1,6 @@
+.nx
+.idea
+.angular
+.gitignore
+.prettierignore
+package-lock.json

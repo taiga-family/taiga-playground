@@ -1,0 +1,29 @@
+@import '@taiga-ui/core/styles/taiga-ui-theme.less';
+@import '@taiga-ui/core/styles/taiga-ui-fonts.less';
+@import '@taiga-ui/styles/taiga-ui-global.less';
+
+app {
+    display: block;
+    padding: 0 1.25rem;
+    block-size: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+
+    // StackBlitz changes "0px" to "0" breaking calc
+    --t-0: 0.0000625rem;
+}
+
+.header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--tui-border-normal);
+    padding-left: 1.25rem;
+}
+
+.mode {
+    margin-left: auto;
+    margin-right: 1rem;
+}
