@@ -1,6 +1,7 @@
 {
-    "extends": "@taiga-ui/tsconfig",
+    "extends": ["@taiga-ui/tsconfig"],
     "compilerOptions": {
+        "rootDir": "./",
         "baseUrl": "./",
         "outDir": "./dist",
         "target": "ES2022",
