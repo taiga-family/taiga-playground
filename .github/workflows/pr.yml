@@ -44,6 +44,10 @@ jobs:
         with:
           token1: ${{ secrets.GITHUB_TOKEN }}
           token2: ${{ secrets.TAIGA_FAMILY_APPROVE_BOT_PAT }}
+      - uses: taiga-family/ci/actions/run/merge@v1.83.0
+        continue-on-error: true
+        with:
+          token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
 
   label-when-approved:
     if: github.event.review.state == 'approved'
