@@ -31,7 +31,7 @@
         "@angular/platform-server": "18.1.0",
         "@angular/router": "18.1.0",
         "@angular/ssr": "18.2.1",
-        "@ng-web-apis/universal": "4.6.2",
+        "@ng-web-apis/universal": "4.6.3",
         "@taiga-ui/addon-charts": "4.7.0",
         "@taiga-ui/addon-commerce": "4.7.0",
         "@taiga-ui/addon-doc": "4.7.0",
