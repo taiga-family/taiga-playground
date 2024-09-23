@@ -4,6 +4,11 @@ on:
   pull_request_review:
     types: [submitted]
 
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
 env:
   JOBS_NAME: '[ "ci" ]'
 
