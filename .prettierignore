@@ -4,3 +4,6 @@ dist
 .gitignore
 .prettierignore
 package-lock.json
+
+/.nx/cache
+/.nx/workspace-data
