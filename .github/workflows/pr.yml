@@ -51,7 +51,7 @@ jobs:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
 
   label-when-approved:
-    if: github.event.review.state == 'approved'
+    if: github.event.review.state == 'APPROVED'
     name: Label when approved
     permissions: write-all
     runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
       - uses: taiga-family/ci/actions/auto/label-when-approved@v1.84.0
         continue-on-error: true
         with:
-          approvals: 2
+          approvals: 1
           token: ${{ secrets.GITHUB_TOKEN }}
 
   assign-author:
