@@ -15,7 +15,7 @@ jobs:
       matrix: ${{ steps.matrix.outputs.value }}
     steps:
       - uses: actions/checkout@v4.2.0
-      - uses: taiga-family/ci/actions/setup/variables@v1.93.1
+      - uses: taiga-family/ci/actions/setup/variables@v1.93.2
       - id: matrix
         if: env.IS_TAIGA_FAMILY_BOT_PR_AUTHOR == 'true'
         run: echo "value=$JOBS_NAME" >> $GITHUB_OUTPUT
@@ -28,7 +28,7 @@ jobs:
       matrix:
         value: ${{ fromJSON(needs.setup.outputs.matrix) }}
     steps:
-      - uses: taiga-family/ci/actions/run/wait-job@v1.93.1
+      - uses: taiga-family/ci/actions/run/wait-job@v1.93.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           job: ${{ matrix.value }}
@@ -39,13 +39,13 @@ jobs:
     permissions: write-all
     steps:
       - uses: actions/checkout@v4.2.0
-      - uses: taiga-family/ci/actions/setup/variables@v1.93.1
-      - uses: taiga-family/ci/actions/auto/approve/double@v1.93.1
+      - uses: taiga-family/ci/actions/setup/variables@v1.93.2
+      - uses: taiga-family/ci/actions/auto/approve/double@v1.93.2
         continue-on-error: true
         with:
           token1: ${{ secrets.GITHUB_TOKEN }}
           token2: ${{ secrets.TAIGA_FAMILY_APPROVE_BOT_PAT }}
-      - uses: taiga-family/ci/actions/run/merge@v1.93.1
+      - uses: taiga-family/ci/actions/run/merge@v1.93.2
         continue-on-error: true
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
@@ -57,8 +57,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.0
-      - uses: taiga-family/ci/actions/setup/variables@v1.93.1
-      - uses: taiga-family/ci/actions/auto/label-when-approved@v1.93.1
+      - uses: taiga-family/ci/actions/setup/variables@v1.93.2
+      - uses: taiga-family/ci/actions/auto/label-when-approved@v1.93.2
         continue-on-error: true
         with:
           approvals: 1
@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.0
-      - uses: taiga-family/ci/actions/setup/variables@v1.93.1
+      - uses: taiga-family/ci/actions/setup/variables@v1.93.2
       - uses: toshimaru/auto-author-assign@v2.1.1
         continue-on-error: true
         with:
@@ -79,8 +79,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.0
-      - uses: taiga-family/ci/actions/setup/variables@v1.93.1
-      - uses: taiga-family/ci/actions/run/node-info@v1.93.1
+      - uses: taiga-family/ci/actions/setup/variables@v1.93.2
+      - uses: taiga-family/ci/actions/run/node-info@v1.93.2
         id: nodejs-workspace
       - uses: actions-ecosystem/action-add-labels@v1
         continue-on-error: true
