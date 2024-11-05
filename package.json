@@ -50,7 +50,7 @@
         "@taiga-ui/styles": "4.13.0",
         "@taiga-ui/tsconfig": "0.231.0",
         "@types/express": "5.0.0",
-        "@types/node": "22.8.7",
+        "@types/node": "22.9.0",
         "express": "4.21.1",
         "libphonenumber-js": "1.11.12",
         "nx": "20.0.8",
